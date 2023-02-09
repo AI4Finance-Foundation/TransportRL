@@ -76,9 +76,7 @@ def train_agent(args: Config):
     del args
 
     if_train = True
-    n = 0
     while if_train:
-        print("n: ", n)
         buffer_items = agent.explore_env(env, horizon_len)
 
         exp_r = buffer_items[2].mean().item()
@@ -93,7 +91,6 @@ def train_agent(args: Config):
 
         evaluator.evaluate_and_save(actor=agent.act, steps=horizon_len, exp_r=exp_r, logging_tuple=logging_tuple)
         if_train = (evaluator.total_step <= break_step) and (not os.path.exists(f"{cwd}/stop"))
-        n += 1
 
     print(f'| UsedTime: {time.time() - evaluator.start_time:>7.0f} | SavedDir: {cwd}')
 

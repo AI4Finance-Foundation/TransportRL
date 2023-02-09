@@ -54,7 +54,6 @@ class AgentDQN(AgentBase):
         get_action = self.act.get_action
         for t in range(horizon_len):
             action = torch.randint(self.action_dim, size=(1, 1)) if if_random else get_action(state)  # different
-            print("t:", t, "if_random: ", if_random)
             states[t] = state
 
             ary_action = action[0, 0].detach().cpu().numpy()
