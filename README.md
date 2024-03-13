@@ -1,5 +1,5 @@
 ## TransportRL
-High-performance RL library for intelligent transportation systems, e.g., autonomous driving, traffic light control, UAV control, and path planning.
+High-performance RL library for intelligent transportation systems, e.g., autonomous driving, traffic light control, UAV control, vehicle routing problem (VRP), dial-a-ride problem (DARP).
 
 
 <div align="center">
